@@ -1,0 +1,847 @@
+@font-face {
+  font-family: "YS Text";
+  src: url("//yastatic.net/islands/_/PyVcRbwHetz0gOVWLonWH7Od8zM.woff2") format("woff2"), url("//yastatic.net/islands/_/bIx8jOfCEfR-mECoDUEZywDBuHA.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "YS Text";
+  src: url("//yastatic.net/islands/_/7_GKBdKFbUPzKlghJRv55xgz0FQ.woff2") format("woff2"), url("//yastatic.net/islands/_/SmqPmIMEXrW4lOY8QrhTUVDbrro.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "YS Text";
+  src: url("//yastatic.net/islands/_/6Roy0LCd05cK4nNCipgzheYcNVU.woff2") format("woff2"), url("//yastatic.net/islands/_/KtHQR1erf3spayoIM4M4ngg0e2E.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+}
+/*
+ *  Hack typeface https://github.com/source-foundry/Hack
+ *  License: https://github.com/source-foundry/Hack/blob/master/LICENSE.md
+ */
+@font-face {
+  font-family: "Hack";
+  src: url("//cdn.jsdelivr.net/npm/hack-font@3/build/web/fonts/hack-regular-subset.woff2") format("woff2"), url("//cdn.jsdelivr.net/npm/hack-font@3/build/web/fonts/hack-regular-subset.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "Hack";
+  src: url("//cdn.jsdelivr.net/npm/hack-font@3/build/web/fonts/hack-bold-subset.woff2") format("woff2"), url("//cdn.jsdelivr.net/npm/hack-font@3/build/web/fonts/hack-bold-subset.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "Hack";
+  src: url("//cdn.jsdelivr.net/npm/hack-font@3/build/web/fonts/hack-italic-subset.woff2") format("woff2"), url("//cdn.jsdelivr.net/npm/hack-font@3/build/web/fonts/hack-italic-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "Hack";
+  src: url("//cdn.jsdelivr.net/npm/hack-font@3/build/web/fonts/hack-bolditalic-subset.woff2") format("woff2"), url("//cdn.jsdelivr.net/npm/hack-font@3/build/web/fonts/hack-bolditalic-subset.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-display: fallback;
+}
+:root {
+  --white-500: #FFFFFF;
+  --black-500: #000000;
+  --blue-grey-50: #F0F2F3;
+  --blue-grey-500: #7F8285;
+  --blue-grey-600: #434445;
+  --blue-grey-600-with-opacity: rgba(67, 68, 69, 0.3);
+  --green-500: #00B341;
+  --orange-500: #F2994A;
+  --yellow-500: #FFCC00;
+  --red-500: #FF3333;
+  --red-600: #E00000;
+  --color-bg-base: var(--white-500);
+  --color-bg-heavy: #D9D9D9;
+  --color-bg-control: #E6E6E6;
+  --color-bg-control-hovered: #DBDBDB;
+  --color-bg-disabled: #F2F2F2;
+  --color-bg-action: var(--yellow-500);
+  --color-bg-action-hovered: #F2C200;
+  --color-border-focused: #B3B3B3;
+  --color-border-action-focused: #B38F00;
+  --color-text: var(--black-500);
+  --color-text-disabled: #7F7F7F;
+  --border-radius-s: 4px;
+  --border-radius-l: 6px;
+  --space-xs: 4px;
+  --space-s: 8px;
+  --space-m: 12px;
+  --space-l: 16px;
+  --space-xl: 24px;
+  --space-xxl: 32px;
+  --space-xxxl: 64px;
+  --space-xxxxl: 124px;
+  --text-font-size-xs: 10px;
+  --text-font-size-s: 13px;
+  --text-font-size-m: 15px;
+  --text-font-size-l: 18px;
+  --letter-spacing-s: 0.03px;
+  --letter-spacing-m: 0.06px;
+  --letter-spacing-l: 0.25px;
+  --headline-font-m: 15px;
+  --headline-font-xl: 24px;
+}
+
+.Container {
+  display: flex;
+  flex-direction: column;
+}
+.Container-Main {
+  flex: 1;
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+}
+.Form {
+  display: flex;
+}
+.Form-Content {
+  max-width: 1024px;
+  min-width: 270px;
+  margin: 0 auto auto 0;
+  padding: 8px 100px 20px;
+  display: flex;
+  flex-direction: column;
+}
+.Form-Item {
+  align-self: flex-start;
+  width: 100%;
+  margin-bottom: var(--space-l);
+}
+.Form-Item_type_header {
+  margin-bottom: var(--space-xl);
+}
+.Form-Item_type_flat {
+  display: flex;
+  margin-bottom: var(--space-xl);
+}
+.Form-Item_type_flat .Form-Label {
+  align-self: center;
+  margin-bottom: 0;
+}
+.Form-Item_type_flat .Form-Input {
+  margin-left: var(--space-s);
+  margin-right: var(--space-s);
+}
+.Form-Item:last-child {
+  margin-bottom: 0;
+}
+.Form-Label {
+  position: relative;
+  display: inline-block;
+  margin-bottom: var(--space-s);
+}
+.Form-Label_type_required::after {
+  content: "*";
+  position: absolute;
+  top: 0;
+  right: -8px;
+  font-size: var(--text-font-size-s);
+  color: var(--red-500);
+}
+.Form-ButtonsBlock {
+  display: flex;
+}
+.Form-ButtonsBlock .Form-Button {
+  margin-right: var(--space-s);
+}
+.Form-ButtonsBlock .Form-Button:last-child {
+  margin-right: 0;
+}
+@media (max-width: 576px) {
+  .Form-Content {
+    padding: 12px 16px 20px;
+  }
+  .Form-ButtonsBlock {
+    flex-direction: column;
+  }
+  .Form-ButtonsBlock .Form-Button {
+    margin-right: 0;
+    margin-bottom: var(--space-m);
+  }
+}
+
+.Card {
+  --card-bg-color: var(--white-500);
+  --card-shadow-color: var(--blue-grey-600-with-opacity);
+  --card-shadow: 0px 1px 1px var(--card-shadow-color),
+                 0px 0px 1px var(--card-shadow-color);
+  --card-shadow-hovered: 0px 2px 8px var(--card-shadow-color),
+                         0px 0px 1px var(--card-shadow-color);
+  --card-border-radius: var(--border-radius-l);
+  display: block;
+  width: 100%;
+  padding: 12px 24px;
+  text-decoration: none;
+  outline: none;
+  background-color: var(--card-bg-color);
+  box-shadow: var(--card-shadow);
+  border-radius: var(--card-border-radius);
+}
+.Card:hover {
+  box-shadow: var(--card-shadow-hovered);
+}
+.Card-Content {
+  display: flex;
+}
+.Card-Icon {
+  align-self: flex-start;
+}
+.Card-DataWrapper {
+  margin-left: 9px;
+  align-self: flex-start;
+  display: flex;
+  width: calc(100% - 24px - 9px);
+}
+.Card-Data {
+  align-self: flex-start;
+  max-width: 70%;
+}
+.Card-TimeBlock {
+  margin-left: auto;
+  align-self: center;
+  min-width: 100px;
+}
+.Card-TimeItem {
+  margin-bottom: var(--space-s);
+  display: flex;
+  opacity: 0.65;
+}
+.Card-TimeItem:last-child {
+  margin-bottom: 0;
+}
+.Card-TimeIcon {
+  align-self: flex-start;
+  margin-right: var(--space-xs);
+  opacity: 0.3;
+}
+.Card-TimeText {
+  text-align: left;
+}
+.Card-DataTitle {
+  display: flex;
+  margin-bottom: var(--space-s);
+}
+.Card-Number {
+  margin-right: var(--space-xs);
+  font-weight: 500;
+  font-size: var(--text-font-size-l);
+  line-height: 20px;
+}
+.Card-CommitName {
+  margin-right: var(--space-xs);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.Card-DataOther {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: -8px;
+}
+.Card-OtherInfo {
+  display: flex;
+  margin-bottom: var(--space-s);
+}
+.Card-OtherIcon {
+  margin-right: var(--space-xs);
+  opacity: 0.3;
+}
+.Card-OtherText {
+  margin-right: var(--space-xs);
+  white-space: nowrap;
+}
+.Card-OtherText:last-child {
+  margin-right: 10px;
+}
+.Card-OtherText_type_hash {
+  opacity: 0.65;
+}
+.Card_type_done .Card-Number {
+  color: var(--green-500);
+}
+.Card_type_fail .Card-Number {
+  color: var(--red-500);
+}
+.Card_type_progress .Card-Number {
+  color: var(--orange-500);
+}
+.Card_page_details {
+  padding: 16px 12px;
+}
+.Card_page_details:hover {
+  box-shadow: var(--card-shadow);
+}
+.Card_page_details .Card-DataWrapper {
+  flex-direction: column;
+  width: calc(100% - 24px);
+}
+.Card_page_details .Card-Data {
+  max-width: 100%;
+}
+.Card_page_details .Card-DataOther {
+  margin-bottom: 0;
+}
+.Card_page_details .Card-OtherInfo:last-child {
+  margin-bottom: var(--space-s);
+}
+.Card_page_details .Card-CommitName {
+  margin-right: 0;
+  white-space: unset;
+  overflow: unset;
+  text-overflow: unset;
+}
+.Card_page_details .Card-TimeBlock {
+  margin-left: 0;
+  align-self: flex-start;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  margin-top: var(--space-s);
+}
+.Card_page_details .Card-TimeBlock::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--blue-grey-50);
+}
+.Card_page_details .Card-TimeItem {
+  margin-right: 10px;
+  margin-bottom: 0;
+}
+.Card_page_details .Card-TimeItem:last-child {
+  margin-right: 0;
+}
+@media (max-width: 576px) {
+  .Card {
+    padding: 16px 12px;
+  }
+  .Card-Data {
+    max-width: 100%;
+  }
+  .Card-DataWrapper {
+    flex-direction: column;
+    width: calc(100% - 24px);
+  }
+  .Card-Number {
+    margin-right: 0;
+    margin-bottom: var(--space-s);
+  }
+  .Card-DataTitle {
+    flex-direction: column;
+  }
+  .Card-DataOther {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  .Card-OtherInfo:last-child {
+    margin-bottom: var(--space-s);
+  }
+  .Card-CommitName {
+    margin-right: 0;
+    white-space: unset;
+    overflow: unset;
+    text-overflow: unset;
+  }
+  .Card-TimeBlock {
+    margin-left: 0;
+    align-self: flex-start;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    margin-top: var(--space-s);
+  }
+  .Card-TimeBlock::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--blue-grey-50);
+  }
+  .Card-TimeItem {
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+  .Card-TimeItem:last-child {
+    margin-right: 0;
+  }
+}
+
+.Header {
+  --header-bg-color: var(--white-500);
+  width: 100%;
+  background-color: var(--header-bg-color);
+}
+.Header-Content {
+  max-width: 1024px;
+  min-width: 270px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 100px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.Header-Title {
+  align-self: center;
+  margin-right: var(--space-s);
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+.Header-ButtonsBlock {
+  margin-left: auto;
+  align-self: flex-start;
+  display: flex;
+  min-width: 133px;
+}
+.Header-Button {
+  margin-right: var(--space-s);
+  margin-left: auto;
+  align-self: center;
+}
+.Header-Button:last-child {
+  margin-right: 0;
+  margin-left: 0;
+}
+@media (max-width: 576px) {
+  .Header-Content {
+    padding: 12px 16px;
+  }
+  .Header-ButtonsBlock {
+    min-width: 64px;
+  }
+}
+
+.Footer {
+  width: 100%;
+  background-color: var(--blue-grey-50);
+}
+.Footer-Content {
+  max-width: 1024px;
+  min-width: 270px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px 100px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.Footer-LinksWrapper {
+  display: flex;
+  align-self: center;
+}
+.Footer-Link {
+  align-self: center;
+  display: inline-block;
+  margin-right: 12px;
+}
+.Footer-Link:last-child {
+  margin-right: 0;
+}
+.Footer-Credentional {
+  margin-left: auto;
+  align-self: center;
+}
+@media (max-width: 576px) {
+  .Footer-Content {
+    padding: 12px 16px;
+    flex-direction: column;
+  }
+  .Footer-LinksWrapper {
+    align-self: flex-start;
+    margin-bottom: var(--space-s);
+  }
+  .Footer-Credentional {
+    margin-left: 0;
+    align-self: flex-start;
+  }
+}
+
+.Text {
+  --text-font-size: var(--text-font-size-s);
+  --text-font-weight: normal;
+  --text-line-height: var(--space-l);
+  --text-color: var(--black-500);
+  --text-letter-spacing: normal;
+  font-size: var(--text-font-size);
+  line-height: var(--text-line-height);
+  color: var(--text-color);
+  font-weight: var(--text-font-weight);
+  letter-spacing: var(--text-letter-spacing);
+}
+.Text-NonBreakable {
+  white-space: nowrap;
+}
+.Text_type_headerTitle {
+  --text-font-size: var(--headline-font-xl);
+  --text-font-weight: 500;
+  --text-line-height: 28px;
+  --text-color: var(--blue-grey-500);
+  --text-letter-spacing: var(--letter-spacing-l);
+}
+.Text_type_repositoryName {
+  --text-font-size: var(--headline-font-xl);
+  --text-font-weight: 500;
+  --text-line-height: 30px;
+  --text-letter-spacing: var(--letter-spacing-l);
+}
+.Text_type_footer {
+  --text-color: var(--blue-grey-500);
+}
+.Text_type_formHeader {
+  --text-font-size: var(--headline-font-m);
+  --text-font-weight: 700;
+  --text-line-height: 20px;
+}
+.Text_type_formLabel {
+  --text-line-height: 18px;
+  --text-letter-spacing: var(--letter-spacing-m);
+}
+.Text_type_card {
+  --text-letter-spacing: var(--letter-spacing-m);
+}
+.Text_type_commit {
+  font-size: 15px;
+  line-height: 20px;
+}
+@media (max-width: 576px) {
+  .Text_type_headerTitle {
+    --text-font-size: var(--text-font-size-l);
+    --text-line-height: 22px;
+  }
+  .Text_type_repositoryName {
+    --text-font-size: var(--text-font-size-l);
+    --text-line-height: 22px;
+  }
+}
+
+.Link {
+  --link-font-size: var(--text-font-size-s);
+  --link-font-weight: normal;
+  --link-line-height: var(--space-l);
+  --link-color: var(--blue-grey-500);
+  --link-color-hovered: var(--red-600);
+  --link-letter-spacing: normal;
+  text-decoration: none;
+  outline: none;
+  font-size: var(--link-font-size);
+  font-weight: var(--link-font-weight);
+  line-height: var(--link-line-height);
+  color: var(--link-color);
+  letter-spacing: var(--link-letter-spacing);
+}
+.Link:hover {
+  color: var(--link-color-hovered);
+}
+.Link_type_footer {
+  --link-letter-spacing: var(--letter-spacing-m);
+}
+
+.Button {
+  --button-font-size: var(--text-font-size-s);
+  --button-font-weight: normal;
+  --button-line-height: 36px;
+  --button-color: var(--black-500);
+  --button-letter-spacing: normal;
+  --button-bg-color: var(--color-bg-control);
+  --button-bg-color-hovered: var(--color-bg-control-hovered);
+  --button-radius: var(--border-radius-s);
+  --button-padding: 20px;
+  --button-active-border-color: var(--color-border-focused);
+  background-color: var(--button-bg-color);
+  padding: 0 var(--button-padding);
+  cursor: pointer;
+  border-radius: var(--button-radius);
+  border: none;
+}
+.Button-Icon {
+  display: none;
+}
+.Button-Text {
+  font-size: var(--button-font-size);
+  line-height: var(--button-line-height);
+  color: var(--button-color);
+  font-weight: var(--button-font-weight);
+  letter-spacing: var(--button-letter-spacing);
+  text-align: center;
+}
+.Button:hover {
+  background-color: var(--button-bg-color-hovered);
+}
+.Button:focus {
+  outline: none;
+  box-shadow: inset 0px 0px 0px 2px var(--button-active-border-color);
+}
+.Button::-moz-focus-inner {
+  border: 0;
+}
+.Button_type_control .Button-Text {
+  line-height: 28px;
+}
+.Button_type_controlExtended .Button-Text {
+  line-height: 28px;
+}
+.Button_color_accent {
+  --button-bg-color: var(--color-bg-action);
+  --button-bg-color-hovered: var(--color-bg-action-hovered);
+  --button-active-border-color: var(--color-border-action-focused);
+}
+.Button_icon_before {
+  --button-padding: var(--space-s);
+  display: flex;
+}
+.Button_icon_before .Button-Icon {
+  display: block;
+  align-self: center;
+}
+.Button_icon_before .Button-Text {
+  align-self: center;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.Button_icon_only {
+  padding: var(--space-s);
+  display: flex;
+}
+.Button_icon_only .Button-Icon {
+  display: block;
+  align-self: center;
+}
+.Button_icon_only .Button-Text {
+  display: none;
+}
+@media (max-width: 576px) {
+  .Button_icon_before {
+    padding: var(--space-s);
+  }
+  .Button_icon_before .Button-Text {
+    display: none;
+  }
+  .Button_type_controlExtended {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .Button_type_controlExtended .Button-Text {
+    line-height: 36px;
+  }
+}
+
+.Icon {
+  --icon-size: var(--space-l);
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%22124%22%20height%3D%22182%22%20viewBox%3D%220%200%20124%20182%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M3.2%2022C3.2%2022.27%203.2225%2022.5375%203.265%2022.8H0.3C0.135%2022.8%200%2022.665%200%2022.5V21.5C0%2021.335%200.135%2021.2%200.3%2021.2H3.265C3.2225%2021.4625%203.2%2021.73%203.2%2022ZM15.7%2021.2H12.735C12.78%2021.4625%2012.8%2021.73%2012.8%2022C12.8%2022.27%2012.7775%2022.5375%2012.735%2022.8H15.7C15.865%2022.8%2016%2022.665%2016%2022.5V21.5C16%2021.335%2015.865%2021.2%2015.7%2021.2ZM8%2019.2C7.2525%2019.2%206.55%2019.4925%206.02%2020.02C5.49%2020.55%205.2%2021.2525%205.2%2022C5.2%2022.7475%205.49%2023.45%206.02%2023.98C6.55%2024.5075%207.2525%2024.8%208%2024.8C8.7475%2024.8%209.45%2024.5075%209.98%2023.98C10.51%2023.45%2010.8%2022.7475%2010.8%2022C10.8%2021.2525%2010.51%2020.55%209.98%2020.02C9.45%2019.4925%208.7475%2019.2%208%2019.2ZM8%2018C10.21%2018%2012%2019.79%2012%2022C12%2024.21%2010.21%2026%208%2026C5.79%2026%204%2024.21%204%2022C4%2019.79%205.79%2018%208%2018Z%22%20fill%3D%22black%22%2F%3E%0A%3Cpath%20d%3D%22M22.6562%2044C22.6562%2049.8853%2017.8853%2054.6562%2012%2054.6562C6.1147%2054.6562%201.34375%2049.8853%201.34375%2044C1.34375%2038.1147%206.1147%2033.3438%2012%2033.3438C17.8853%2033.3438%2022.6562%2038.1147%2022.6562%2044ZM10.7674%2049.6424L18.6736%2041.7361C18.9421%2041.4677%2018.9421%2041.0324%2018.6736%2040.7639L17.7014%2039.7916C17.4329%2039.5231%2016.9976%2039.5231%2016.7291%2039.7916L10.2812%2046.2394L7.2709%2043.2291C7.00243%2042.9606%206.56712%2042.9606%206.29861%2043.2291L5.32635%2044.2014C5.05788%2044.4698%205.05788%2044.9051%205.32635%2045.1736L9.7951%2049.6424C10.0636%2049.9109%2010.4989%2049.9109%2010.7674%2049.6424Z%22%20fill%3D%22%2300B341%22%2F%3E%0A%3Cpath%20d%3D%22M64%2033.3438C58.1133%2033.3438%2053.3438%2038.1133%2053.3438%2044C53.3438%2049.8867%2058.1133%2054.6562%2064%2054.6562C69.8867%2054.6562%2074.6562%2049.8867%2074.6562%2044C74.6562%2038.1133%2069.8867%2033.3438%2064%2033.3438ZM69.225%2046.7973C69.427%2046.9992%2069.427%2047.3258%2069.225%2047.5277L67.5234%2049.225C67.3215%2049.427%2066.9949%2049.427%2066.793%2049.225L64%2046.4062L61.2027%2049.225C61.0008%2049.427%2060.6742%2049.427%2060.4723%2049.225L58.775%2047.5234C58.573%2047.3215%2058.573%2046.9949%2058.775%2046.793L61.5938%2044L58.775%2041.2027C58.573%2041.0008%2058.573%2040.6742%2058.775%2040.4723L60.4766%2038.7707C60.6785%2038.5687%2061.0051%2038.5687%2061.207%2038.7707L64%2041.5938L66.7973%2038.775C66.9992%2038.573%2067.3258%2038.573%2067.5277%2038.775L69.2293%2040.4766C69.4312%2040.6785%2069.4312%2041.0051%2069.2293%2041.207L66.4062%2044L69.225%2046.7973Z%22%20fill%3D%22%23FF3333%22%2F%3E%0A%3Cpath%20d%3D%22M38%2033C31.9234%2033%2027%2037.9234%2027%2044C27%2050.0766%2031.9234%2055%2038%2055C44.0766%2055%2049%2050.0766%2049%2044C49%2037.9234%2044.0766%2033%2038%2033ZM42.1024%2046.8831L41.2153%2047.9919C41.1571%2048.0647%2041.0851%2048.1253%2041.0034%2048.1703C40.9218%2048.2153%2040.8321%2048.2437%2040.7395%2048.254C40.6468%2048.2643%2040.5531%2048.2562%2040.4636%2048.2303C40.3741%2048.2044%2040.2905%2048.161%2040.2177%2048.1028L37.246%2045.8975C37.0383%2045.7313%2036.8707%2045.5204%2036.7556%2045.2807C36.6404%2045.0409%2036.5806%2044.7783%2036.5806%2044.5123V37.6129C36.5806%2037.4247%2036.6554%2037.2442%2036.7885%2037.1111C36.9216%2036.978%2037.1021%2036.9032%2037.2903%2036.9032H38.7097C38.8979%2036.9032%2039.0784%2036.978%2039.2115%2037.1111C39.3446%2037.2442%2039.4194%2037.4247%2039.4194%2037.6129V44L41.9919%2045.8851C42.0647%2045.9433%2042.1254%2046.0154%2042.1703%2046.0971C42.2153%2046.1787%2042.2437%2046.2685%2042.254%2046.3612C42.2642%2046.4539%2042.2561%2046.5477%2042.2301%2046.6372C42.2041%2046.7268%2042.1607%2046.8103%2042.1024%2046.8831Z%22%20fill%3D%22%23FF9A00%22%2F%3E%0A%3Cpath%20d%3D%22M44.125%2022C46.0582%2022%2047.625%2020.4332%2047.625%2018.5C47.625%2016.5668%2046.0582%2015%2044.125%2015C42.1918%2015%2040.625%2016.5668%2040.625%2018.5C40.625%2020.4332%2042.1918%2022%2044.125%2022ZM46.575%2022.875H46.1184C45.5113%2023.1539%2044.8359%2023.3125%2044.125%2023.3125C43.4141%2023.3125%2042.7414%2023.1539%2042.1316%2022.875H41.675C39.6461%2022.875%2038%2024.5211%2038%2026.55V27.6875C38%2028.4121%2038.5879%2029%2039.3125%2029H48.9375C49.6621%2029%2050.25%2028.4121%2050.25%2027.6875V26.55C50.25%2024.5211%2048.6039%2022.875%2046.575%2022.875Z%22%20fill%3D%22black%22%2F%3E%0A%3Cpath%20d%3D%22M23.6081%2023H22.3626C22.1571%2023%2021.989%2022.8313%2021.989%2022.625V21.375C21.989%2021.1687%2022.1571%2021%2022.3626%2021H23.6081C23.8136%2021%2023.9817%2021.1687%2023.9817%2021.375V22.625C23.9817%2022.8313%2023.8136%2023%2023.6081%2023ZM26.9707%2022.625V21.375C26.9707%2021.1687%2026.8026%2021%2026.5971%2021H25.3516C25.1462%2021%2024.978%2021.1687%2024.978%2021.375V22.625C24.978%2022.8313%2025.1462%2023%2025.3516%2023H26.5971C26.8026%2023%2026.9707%2022.8313%2026.9707%2022.625ZM29.9597%2022.625V21.375C29.9597%2021.1687%2029.7916%2021%2029.5861%2021H28.3407C28.1352%2021%2027.967%2021.1687%2027.967%2021.375V22.625C27.967%2022.8313%2028.1352%2023%2028.3407%2023H29.5861C29.7916%2023%2029.9597%2022.8313%2029.9597%2022.625ZM26.9707%2025.625V24.375C26.9707%2024.1687%2026.8026%2024%2026.5971%2024H25.3516C25.1462%2024%2024.978%2024.1687%2024.978%2024.375V25.625C24.978%2025.8313%2025.1462%2026%2025.3516%2026H26.5971C26.8026%2026%2026.9707%2025.8313%2026.9707%2025.625ZM23.9817%2025.625V24.375C23.9817%2024.1687%2023.8136%2024%2023.6081%2024H22.3626C22.1571%2024%2021.989%2024.1687%2021.989%2024.375V25.625C21.989%2025.8313%2022.1571%2026%2022.3626%2026H23.6081C23.8136%2026%2023.9817%2025.8313%2023.9817%2025.625ZM29.9597%2025.625V24.375C29.9597%2024.1687%2029.7916%2024%2029.5861%2024H28.3407C28.1352%2024%2027.967%2024.1687%2027.967%2024.375V25.625C27.967%2025.8313%2028.1352%2026%2028.3407%2026H29.5861C29.7916%2026%2029.9597%2025.8313%2029.9597%2025.625ZM32.9487%2017.5V28.5C32.9487%2029.3281%2032.2793%2030%2031.4542%2030H20.4945C19.6694%2030%2019%2029.3281%2019%2028.5V17.5C19%2016.6719%2019.6694%2016%2020.4945%2016H21.989V14.375C21.989%2014.1688%2022.1571%2014%2022.3626%2014H23.6081C23.8136%2014%2023.9817%2014.1688%2023.9817%2014.375V16H27.967V14.375C27.967%2014.1688%2028.1352%2014%2028.3407%2014H29.5861C29.7916%2014%2029.9597%2014.1688%2029.9597%2014.375V16H31.4542C32.2793%2016%2032.9487%2016.6719%2032.9487%2017.5ZM31.4542%2028.3125V19H20.4945V28.3125C20.4945%2028.4156%2020.5786%2028.5%2020.6813%2028.5H31.2674C31.3701%2028.5%2031.4542%2028.4156%2031.4542%2028.3125Z%22%20fill%3D%22black%22%2F%3E%0A%3Cpath%20d%3D%22M67.7801%2019.75L68.4846%2019.0437C68.6311%2018.8969%2068.6311%2018.6594%2068.4846%2018.5125L67.9547%2017.9813C67.8082%2017.8344%2067.5713%2017.8344%2067.4248%2017.9813L66.7795%2018.6281C65.81%2017.7688%2064.5849%2017.1938%2063.232%2017.0406V15.5H64.1049C64.3106%2015.5%2064.4789%2015.3312%2064.4789%2015.125V14.375C64.4789%2014.1688%2064.3106%2014%2064.1049%2014H60.8629C60.6572%2014%2060.4889%2014.1688%2060.4889%2014.375V15.125C60.4889%2015.3312%2060.6572%2015.5%2060.8629%2015.5H61.7358V17.0438C58.5063%2017.4156%2056%2020.1625%2056%2023.5C56%2027.0906%2058.9022%2030%2062.4839%2030C66.0656%2030%2068.9678%2027.0906%2068.9678%2023.5C68.9678%2022.1031%2068.5283%2020.8094%2067.7801%2019.75ZM62.4839%2028.5C59.7282%2028.5%2057.4963%2026.2625%2057.4963%2023.5C57.4963%2020.7375%2059.7282%2018.5%2062.4839%2018.5C65.2396%2018.5%2067.4715%2020.7375%2067.4715%2023.5C67.4715%2026.2625%2065.2396%2028.5%2062.4839%2028.5ZM62.858%2025H62.1098C61.9041%2025%2061.7358%2024.8313%2061.7358%2024.625V20.375C61.7358%2020.1687%2061.9041%2020%2062.1098%2020H62.858C63.0637%2020%2063.232%2020.1687%2063.232%2020.375V24.625C63.232%2024.8313%2063.0637%2025%2062.858%2025Z%22%20fill%3D%22black%22%2F%3E%0A%3Cpath%20d%3D%22M8.77548%203.03097C8.01915%202.32277%207.03761%201.93456%205.99632%201.93548C4.12234%201.93713%202.50452%203.22205%202.05783%205.00444C2.02531%205.13419%201.90972%205.22581%201.77595%205.22581H0.389589C0.208185%205.22581%200.070379%205.06112%200.103935%204.88284C0.627411%202.103%203.06806%200%206%200C7.60761%200%209.06752%200.632322%2010.1447%201.66173L11.0088%200.797661C11.3746%200.431879%2012%200.690944%2012%201.20825V4.45161C12%204.7723%2011.74%205.03226%2011.4194%205.03226H8.17599C7.65869%205.03226%207.39962%204.40683%207.7654%204.04102L8.77548%203.03097ZM0.580645%206.96774H3.82401C4.34131%206.96774%204.60038%207.59317%204.2346%207.95898L3.22452%208.96906C3.98085%209.67727%204.96246%2010.0655%206.00377%2010.0645C7.87679%2010.0628%209.49527%208.7788%209.94217%206.99561C9.97468%206.86586%2010.0903%206.77424%2010.224%206.77424H11.6104C11.7918%206.77424%2011.9296%206.93893%2011.8961%207.11721C11.3726%209.897%208.93194%2012%206%2012C4.39239%2012%202.93248%2011.3677%201.85528%2010.3383L0.99121%2011.2023C0.625427%2011.5681%200%2011.3091%200%2010.7917V7.54839C0%207.2277%200.25996%206.96774%200.580645%206.96774Z%22%20fill%3D%22black%22%2F%3E%0A%3Cpath%20d%3D%22M24.2887%205.19256L17.414%201.12827C16.8554%200.79821%2016%201.11851%2016%201.93488V10.0615C16%2010.7939%2016.7949%2011.2353%2017.414%2010.8681L24.2887%206.80578C24.902%206.44447%2024.9039%205.55388%2024.2887%205.19256Z%22%20fill%3D%22%23111111%22%2F%3E%0A%3Cpath%20d%3D%22M54.2526%2081.2719V93.0895L61.446%20100.282C59.799%2091.8545%2062.2937%2083.2577%2068.3486%2077.2036C73.2653%2072.2877%2079.7805%2069.6481%2086.5136%2069.6481H86.8042L72.902%2083.4999L76.5592%20105.44L98.5025%20109.097L112.38%2095.2206C112.453%20102.074%20109.813%20108.661%20104.824%20113.649C102.571%20115.901%2099.9314%20117.621%2097.1219%20118.88C97.5579%20119.267%2098.0665%20119.582%2098.4782%20119.994L105.914%20127.428C108.457%20125.903%20110.879%20124.062%20113.034%20121.883C122.262%20112.656%20126.041%2099.0468%20122.892%2086.3816C122.165%2083.4272%20119.889%2081.1024%20116.982%2080.2791C114.027%2079.4557%20110.879%2080.3033%20108.747%2082.4585L94.5304%2096.6494L86.6831%2095.3417L85.3753%2087.4956L99.5681%2073.3048C101.724%2071.1495%20102.547%2068.0014%20101.724%2065.0712C100.924%2062.141%2098.5751%2059.8647%2095.6203%2059.1382C82.7353%2055.9416%2069.487%2059.6225%2060.1139%2068.97C57.6434%2071.4401%2055.6332%2074.225%2053.9862%2077.1794L54.2526%2077.3731V81.2719ZM25.6731%20167.942C22.573%20171.042%2017.1235%20171.042%2014.0233%20167.942C12.4733%20166.393%2011.6013%20164.31%2011.6013%20162.13C11.6013%20159.927%2012.449%20157.868%2014.0233%20156.319L46.5749%20123.772L38.3644%20115.562L5.81278%20148.085C2.05869%20151.838%200%20156.827%200%20162.13C0%20167.434%202.05869%20172.422%205.81278%20176.176C9.56687%20179.929%2014.5562%20181.988%2019.8603%20181.988C25.1645%20181.988%2030.1538%20179.929%2033.9079%20176.176L58.3458%20151.742C55.9965%20147.915%2054.6644%20143.556%2054.5433%20139.125L25.6731%20167.942ZM121.366%20153.824L93.0045%20125.467C87.4097%20119.873%2079.0539%20118.783%2072.3207%20122.101L46.5023%2096.2861V81.2477L15.5008%2058L0%2073.4985L23.2511%20104.495H38.2917L64.1102%20130.31C60.8162%20137.042%2061.8819%20145.397%2067.4767%20150.991L95.8383%20179.348C99.3744%20182.884%20105.09%20182.884%20108.602%20179.348L121.366%20166.586C124.878%20163.051%20124.878%20157.336%20121.366%20153.824Z%22%20fill%3D%22black%22%20fill-opacity%3D%220.1%22%2F%3E%0A%3Cpath%20d%3D%22M39.3408%207.44193L38.3102%206.84677C38.4142%206.28548%2038.4142%205.70968%2038.3102%205.14839L39.3408%204.55323C39.4594%204.48549%2039.5126%204.34517%2039.4739%204.21452C39.2053%203.35324%2038.7481%202.57421%2038.1505%201.92582C38.0586%201.82663%2037.9086%201.80244%2037.7924%201.87018L36.7618%202.46534C36.3287%202.09276%2035.8304%201.80485%2035.2908%201.61615V0.428247C35.2908%200.292763%2035.1965%200.174216%2035.0634%200.145183C34.1755%20-0.0532029%2033.2659%20-0.0435256%2032.4215%200.145183C32.2884%200.174216%2032.1941%200.292763%2032.1941%200.428247V1.61856C31.657%201.80969%2031.1586%202.0976%2030.7231%202.46776L29.6949%201.8726C29.5764%201.80485%2029.4288%201.82663%2029.3368%201.92824C28.7393%202.57421%2028.282%203.35324%2028.0135%204.21694C27.9723%204.34759%2028.028%204.48791%2028.1465%204.55565L29.1772%205.15081C29.0731%205.7121%2029.0731%206.2879%2029.1772%206.84919L28.1465%207.44435C28.028%207.51209%2027.9747%207.65241%2028.0135%207.78306C28.282%208.64434%2028.7393%209.42337%2029.3368%2010.0718C29.4288%2010.171%2029.5788%2010.1951%2029.6949%2010.1274L30.7255%209.53224C31.1586%209.90482%2031.657%2010.1927%2032.1965%2010.3814V11.5718C32.1965%2011.7072%2032.2909%2011.8258%2032.4239%2011.8548C33.3118%2012.0532%2034.2215%2012.0435%2035.0658%2011.8548C35.1989%2011.8258%2035.2933%2011.7072%2035.2933%2011.5718V10.3814C35.8304%2010.1903%2036.3287%209.9024%2036.7642%209.53224L37.7949%2010.1274C37.9134%2010.1951%2038.061%2010.1734%2038.1529%2010.0718C38.7505%209.42579%2039.2078%208.64676%2039.4763%207.78306C39.5126%207.64999%2039.4594%207.50967%2039.3408%207.44193ZM33.7425%207.93306C32.6755%207.93306%2031.807%207.06451%2031.807%205.99758C31.807%204.93065%2032.6755%204.0621%2033.7425%204.0621C34.8094%204.0621%2035.6779%204.93065%2035.6779%205.99758C35.6779%207.06451%2034.8094%207.93306%2033.7425%207.93306Z%22%20fill%3D%22%23111111%22%2F%3E%0A%3Cpath%20d%3D%22M80%2030C75.6%2030%2072%2026.4%2072%2022C72%2017.6%2075.6%2014%2080%2014C84.4%2014%2088%2017.6%2088%2022C88%2026.4%2084.4%2030%2080%2030ZM84%2019.12L82.88%2018L80%2020.88L77.12%2018L76%2019.12L78.88%2022L76%2024.88L77.12%2026L80%2023.12L82.88%2026L84%2024.88L81.12%2022L84%2019.12Z%22%20fill%3D%22%23CCCCCC%22%2F%3E%0A%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+.Icon_type_restart {
+  --icon-size: var(--space-m);
+  background-position: 0px 0;
+}
+.Icon_type_play {
+  --icon-size: var(--space-m);
+  background-position: -14px 0;
+}
+.Icon_type_settings {
+  --icon-size: var(--space-m);
+  background-position: -28px 0;
+}
+.Icon_type_branch {
+  background-position: 0px -14px;
+}
+.Icon_type_calendar {
+  background-position: -18px -14px;
+}
+.Icon_type_user {
+  background-position: -36px -14px;
+}
+.Icon_type_stopwatch {
+  background-position: -54px -14px;
+}
+.Icon_type_clear {
+  background-position: -72px -14px;
+}
+.Icon_type_done {
+  --icon-size: var(--space-xl);
+  background-position: 0px -32px;
+}
+.Icon_type_clock {
+  --icon-size: var(--space-xl);
+  background-position: -26px -32px;
+}
+.Icon_type_fail {
+  --icon-size: var(--space-xl);
+  background-position: -52px -32px;
+}
+.Icon_type_settingsLogo {
+  --icon-size: var(--space-xxxxl);
+  background-position: 0px -58px;
+}
+
+.Input {
+  --input-bg-color: var(--color-bg-base);
+  --input-border-color: var(--color-bg-heavy);
+  --input-border-active: var(--color-border-focused);
+  --input-placeholder-size: var(--text-font-size-s);
+  --input-placeholder-line-height: var(--space-l);
+  --input-placeholder-color: var(--color-text);
+  --input-border-radius: var(--border-radius-s);
+  --input-font-size: var(--text-font-size-s);
+  --input-line-height: 15px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 474px;
+}
+.Input-Control {
+  display: inline-block;
+  width: 100%;
+  padding: 9px 13px 8px;
+  background: var(--input-bg-color);
+  border: 2px solid var(--input-border-color);
+  border-radius: var(--input-border-radius);
+  font-size: var(--input-font-size);
+  line-height: var(--input-line-height);
+  text-align: inherit;
+}
+.Input-Control::placeholder {
+  font-size: var(--input-placeholder-size);
+  line-height: var(--input-placeholder-line-height);
+  color: var(--input-placeholder-color);
+  opacity: 0.2;
+}
+.Input-Control:focus {
+  --input-border-color: var(--input-border-active);
+  outline: none;
+}
+.Input .Input-ClearIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.Input_clear_visible .Input-Control:placeholder-shown ~ .Input-ClearIcon {
+  display: none;
+}
+.Input_size_small {
+  width: 52px;
+}
+.Input_align_right {
+  text-align: right;
+}
+
+.Settings {
+  display: flex;
+}
+.Settings-Content {
+  max-width: 1024px;
+  min-width: 270px;
+  margin: auto;
+  padding: 10px 100px;
+  display: flex;
+  flex-direction: column;
+}
+.Settings-Logo {
+  align-self: center;
+}
+.Settings-Description {
+  align-self: center;
+  text-align: center;
+  margin-top: var(--space-xxl);
+  margin-bottom: var(--space-xl);
+  max-width: 264px;
+}
+.Settings-Button {
+  align-self: center;
+}
+@media (max-width: 576px) {
+  .Settings-Content {
+    padding: 12px 16px;
+  }
+}
+
+.BuildList {
+  display: flex;
+}
+.BuildList-Content {
+  max-width: 1024px;
+  min-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 8px 100px 20px;
+  display: flex;
+  flex-direction: column;
+}
+.BuildList-Item {
+  align-self: center;
+  margin-bottom: var(--space-s);
+}
+.BuildList-Button {
+  align-self: flex-start;
+}
+@media (max-width: 576px) {
+  .BuildList-Content {
+    padding: 12px 16px 16px;
+  }
+  .BuildList-Button {
+    width: 100%;
+  }
+}
+
+.BuildLog {
+  background: var(--color-bg-disabled);
+  border-radius: var(--border-radius-l);
+  padding: 8px 12px;
+  font-family: "Hack", monospace;
+  font-style: normal;
+  font-weight: normal;
+  font-size: var(--text-font-size-xs);
+  line-height: 20px;
+  color: var(--color-text);
+  opacity: 0.9;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.BuildLog::-webkit-scrollbar {
+  height: var(--space-xs);
+}
+.BuildLog::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 100px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font-family: "YS Text", Arial, Helvetica, sans-serif;
+}

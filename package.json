@@ -1,0 +1,36 @@
+{
+  "name": "homework_markup",
+  "version": "1.0.0",
+  "description": "шри, дз по вёрстке",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "rm -rf build",
+    "build": "npm run prebuild && parcel build -d ./build /src/pages/index.html /src/pages/settings.html /src/pages/build-history.html /src/pages/build-details.html --no-source-maps --no-content-hash --no-minify",
+    "start": "parcel /src/pages/index.html /src/pages/settings.html /src/pages/build-history.html /src/pages/build-details.html --open",
+    "server": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spelot/homework_markup.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spelot/homework_markup/issues"
+  },
+  "homepage": "https://github.com/spelot/homework_markup#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "nodegit": "^0.26.5",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "parcel-bundler": "1.9.7",
+    "postcss-assets": "^5.0.0",
+    "sass": "^1.26.2"
+  }
+}
